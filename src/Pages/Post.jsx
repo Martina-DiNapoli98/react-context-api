@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-export default function Post() {
-    const [post, setPost] = useState(null)
+export default function product() {
+    const [product, setproduct] = useState(null)
     const { id } = useParams()
     const navigate = useNavigate()
     useEffect(() => {
@@ -9,7 +9,7 @@ export default function Post() {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                setPost(data)
+                setproduct(data)
             })
             .catch(err => {
                 console.error('ERROR', err);
@@ -18,21 +18,21 @@ export default function Post() {
     return (
         <main>
             {
-                !post ? ('Loading...') : (
+                !product ? ('Loading...') : (
                     <>
-                        <section id="post-details" className="mt-5">
+                        <section id="product-details" className="mt-5">
                             <div className="container">
                                 <div className="row">
                                     <div className="col-5">
-                                        <img className="img-fluid" src={`${post.image}`} alt={post.title} />
+                                        <img className="img-fluid" src={`${product.image}`} alt={product.title} />
                                     </div>
                                     <div className="col-7">
                                         <button onClick={() => navigate(-1)} className="back btn btn-info">
                                             <i className="bi bi-arrow-left"></i>
                                         </button>
-                                        <h1>{post.title}</h1>
-                                        <p>{post.description}</p>
-                                        <h4>{post.price}€</h4>
+                                        <h1>{product.title}</h1>
+                                        <p>{product.description}</p>
+                                        <h4>{product.price}€</h4>
                                     </div>
                                 </div>
                             </div>
