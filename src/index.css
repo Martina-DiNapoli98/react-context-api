@@ -1,0 +1,21 @@
+@import 'bootstrap';
+@import 'bootstrap-icons';
+
+.nav-item {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 20px;
+
+}
+
+main {
+  min-height: 400px;
+}
+
+footer {
+  background-color: pink;
+
+}
